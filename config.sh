@@ -7,7 +7,7 @@
 # 'installation_complete', and 'installation_incomplete'.
 
 # Set to 1 to enforce root installations.
-#ROOT_ONLY=0
+ROOT_ONLY=1
 
 # Overwrite to disable the initial touch-all-files.
 #INITIAL_TOUCH_ALL=1

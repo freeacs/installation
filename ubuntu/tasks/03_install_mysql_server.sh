@@ -13,8 +13,11 @@ function install_mysql_server_run() {
     rootPass=$(pwmake 128)
     echo "mysql-server-5.7 mysql-server/root_password password root" | debconf-set-selections
     echo "mysql-server-5.7 mysql-server/root_password_again password root" | debconf-set-selections
-    apt-get -y install mysql-server-5.7
-    mysqladmin -u root --password="root" password $rootPass
+    apt-get -y install mysql-server-5.7 && mysqladmin -u root --password="root" password $rootPass
+    if [[ $? > 0 ]]; then
+      return ${E_FAILURE}
+    fi
   fi
   settings_set "mysql_root_password" ${rootPass}
+  return ${E_SUCCESS}
 }
