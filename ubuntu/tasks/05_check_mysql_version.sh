@@ -14,6 +14,6 @@ function check_mysql_version_run() {
     "
 	  return ${E_FAILURE}
   fi
-  log_info "Found mysql version: $mysqlok"
+  log_info "Found mysql version: 5.7"
   return ${E_SUCCESS}
 }
