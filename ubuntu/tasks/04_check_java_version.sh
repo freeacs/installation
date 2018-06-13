@@ -10,5 +10,6 @@ function check_java_version_run() {
     log_info "Found Java major version: $majorVersion"
     return ${E_SUCCESS}
   fi
+  log_warning "Found unsupported Java major version $majorVersion"
   return ${E_FAILURE}
 }
